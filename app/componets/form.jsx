@@ -46,7 +46,7 @@ export default function FormDownloadFile() {
 			//     setIsDisabled(false)
 			// };
 		} else {
-			fileDisplayArea.innerText = "File not supported!";
+			console.log("File not supported!") ;
 		}
 	};
 
