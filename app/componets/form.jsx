@@ -13,16 +13,11 @@ export default function FormDownloadFile({ setFile, isDisabled }) {
 	return (
 		<form className="flex flex-col gap-3">
 			<label className="text-center uppercase text-lg font-black">Download File</label>
-			<input
-				type="file"
-				// onChange={handleFileChange}
-				ref={fileInput}
-				disabled={isDisabled}
-			/>
+			<input type="file" ref={fileInput} disabled={isDisabled} />
 			<button
 				type="submit"
 				className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline "
-			onClick={handleFileChange}
+				onClick={handleFileChange}
 			>
 				Сalculation
 			</button>

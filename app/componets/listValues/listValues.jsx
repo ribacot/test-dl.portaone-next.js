@@ -5,12 +5,12 @@ export default function ListValues({ valuesArr }) {
 				<li key={idx}>
 					{Array.isArray(value) ? (
 						<div>
-							<b>{title}</b>{" "}
+							<b>{title}</b>
 							<ul>
 								{value.map((el, idx) => (
 									<li key={idx}>
 										{el.join(" / ")} <br />
-										Length:{el.length}
+										<span className=" font-semibold">Length :{el.length}</span>
 									</li>
 								))}
 							</ul>

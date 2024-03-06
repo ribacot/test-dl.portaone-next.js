@@ -12,14 +12,6 @@ export default function calculationValues(numberArr) {
 	const maxIncreaseыSubsequences = findSubsequence(numberArr, "+");
 	const maxDecreasesSubsequences = findSubsequence(numberArr, "-");
 
-	// console.log("minValue", minValue);
-	// console.log("maxValue", maxValue);
-	// console.log("medianaValue", medianaValue);
-	// console.log("averageValue", averageValue);
-
-	// console.log("maxIncreaseыSubsequences", maxIncreaseыSubsequences);
-	// console.log("maxDecreasesSubsequences", maxDecreasesSubsequences);
-
 	return [
 		{ title: "minValue", value: minValue },
 		{ title: "maxValue", value: maxValue },

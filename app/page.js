@@ -31,7 +31,6 @@ export default function Home() {
 			}
 		}
 	}, [file]);
-	console.log("values", values);
 
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
