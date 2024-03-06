@@ -41,7 +41,7 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<FormDownloadFile setFile={setFile} isDisabled={isDisabled} />
-			{isFileTypeText ? <p>Не вірній формат файлу</p> : null}
+			{isFileTypeText ? <p>Невірній формат файлу</p> : null}
 			{isCalc ? <p>Розраховуємо...</p> : null}
 			<ListValues valuesArr={values} />
 		</main>
