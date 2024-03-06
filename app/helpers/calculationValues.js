@@ -3,7 +3,6 @@ import { findSubsequence } from "./findSubsequence";
 import { findMediana } from "./findMediana";
 
 export default function calculationValues(numberArr) {
-    
 	const sortArr = [...numberArr].sort((a, b) => a - b);
 	const minValue = sortArr[0];
 	const maxValue = sortArr[sortArr.length - 1];
@@ -13,11 +12,20 @@ export default function calculationValues(numberArr) {
 	const maxIncreaseыSubsequences = findSubsequence(numberArr, "+");
 	const maxDecreasesSubsequences = findSubsequence(numberArr, "-");
 
-	console.log("minValue", minValue);
-	console.log("maxValue", maxValue);
-	console.log("medianaValue", medianaValue);
-	console.log("averageValue", averageValue);
+	// console.log("minValue", minValue);
+	// console.log("maxValue", maxValue);
+	// console.log("medianaValue", medianaValue);
+	// console.log("averageValue", averageValue);
 
-	console.log("maxIncreaseыSubsequences", maxIncreaseыSubsequences);
-	console.log("maxDecreasesSubsequences", maxDecreasesSubsequences);
+	// console.log("maxIncreaseыSubsequences", maxIncreaseыSubsequences);
+	// console.log("maxDecreasesSubsequences", maxDecreasesSubsequences);
+
+	return [
+		{ title: "minValue", value: minValue },
+		{ title: "maxValue", value: maxValue },
+		{ title: "averageValue", value: averageValue },
+		{ title: "medianaValue", value: medianaValue },
+		{ title: "maxIncreaseыSubsequences", value: maxIncreaseыSubsequences },
+		{ title: "maxDecreasesSubsequences", value: maxDecreasesSubsequences },
+	];
 }
