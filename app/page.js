@@ -7,6 +7,7 @@ import ListValues from "./componets/listValues/listValues";
 export default function Home() {
 	const [isDisabled, setIsDisabled] = useState(false);
 	const [isFileTypeText, setIsFileTypeText] = useState(false);
+	const [isCalc, setIsCalc] = useState(false);
 	const [file, setFile] = useState(null);
 	const [values, setValues] = useState(null);
 	const textType = /text.*/;
@@ -17,13 +18,18 @@ export default function Home() {
 				const reader = new FileReader();
 
 				reader.readAsText(file);
-				reader.onloadstart = () => setIsDisabled(true);
+				reader.onloadstart = () => {
+					setIsDisabled(true);
+					setIsCalc(true);
+				};
 
 				reader.onload = () => {
 					const numberArr = reader.result.split("\n").map((el) => Number(el));
 					setValues(calculationValues(numberArr));
 				};
 				reader.onloadend = () => {
+					setIsCalc(false);
+
 					setIsDisabled(false);
 				};
 			} else {
@@ -35,6 +41,8 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<FormDownloadFile setFile={setFile} isDisabled={isDisabled} />
+			{isFileTypeText ? <p>Не вірній формат файлу</p> : null}
+			{isCalc ? <p>Розраховуємо...</p> : null}
 			<ListValues valuesArr={values} />
 		</main>
 	);
